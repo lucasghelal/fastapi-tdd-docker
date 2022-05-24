@@ -16,3 +16,8 @@ RUN poetry config virtualenvs.create false \
   && poetry install 
 
 COPY . .
+
+COPY ./entrypoint.sh .
+RUN chmod 777 /usr/src/api/entrypoint.sh
+
+ENTRYPOINT ["/usr/src/api/entrypoint.sh"]
