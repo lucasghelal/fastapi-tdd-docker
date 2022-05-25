@@ -1,7 +1,6 @@
-from pydantic import BaseModel
-
+from pydantic import AnyHttpUrl, BaseModel
 class SummaryPayloadSchema(BaseModel):
-    url: str
-    
-class SummaryResponseSchema(BaseModel):
+    url: AnyHttpUrl
+
+class SummaryResponseSchema(SummaryPayloadSchema):
     id: int
